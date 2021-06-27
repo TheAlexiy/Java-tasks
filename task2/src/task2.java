@@ -29,7 +29,7 @@ public class task2 {
                 double c = Math.pow(xc - x1, 2) + Math.pow(yc - y1, 2) + Math.pow(zc - z1, 2) - Math.pow(r, 2);
                 double D = b * b - 4 * a * c;
                 if (D < 0) {
-                    System.out.println("\n" + "Коллизий нет");
+                    System.out.println( "\nКоллизий нет");
                 } else {
                     if (D == 0) {
                         double t = -b / (2 * a);
@@ -47,7 +47,8 @@ public class task2 {
                         double xt2 = x1 + (x2 - x1) * t2;
                         double yt2 = y1 + (y2 - y1) * t2;
                         double zt2 = z1 + (z2 - z1) * t2;
-                        System.out.println("\n" + "2 точки соприкосновения с координатами {" + xt1 + "," + yt1 + "," + zt1 + "} и {" + xt2 + "," + yt2 + "," + zt2 + "}");
+                        System.out.println("\n" + "2 точки соприкосновения: \nПервая точка с координатами {" + xt1 + "," + yt1 + "," + zt1 + "} " +
+                                "\nВторая точка с координатами {" + xt2 + "," + yt2 + "," + zt2 + "}");
                     }
                 }
             }
