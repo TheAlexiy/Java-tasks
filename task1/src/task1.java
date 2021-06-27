@@ -19,7 +19,7 @@ public class task1 {
             System.out.println(Func(a,c));
         }
         else {
-            System.out.println(Func(a,b,c));
+            System.out.println(Func(a,b,c)); //Перегрузка метода Func
         }
     }
     public static String Func(int number, int radixFinal) {

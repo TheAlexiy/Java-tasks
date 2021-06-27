@@ -1,24 +1,20 @@
-import java.util.Scanner;
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
-
+import java.util.Scanner;
+import java.util.logging.*;
 public class task3 {
     public static void main(String[] args) {
-        String csvFile = "/Users/Final/IdeaProjects/task3/log.csv";
-        String line;
-        String cvsSplitBy = ",";
-        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
-
-            while ((line = br.readLine()) != null) {
-                String[] country = line.split(cvsSplitBy);
-                System.out.println("Country [code= " + country[4] + " , name = " + country[5] + "]");
-            }
-        } catch (IOException e) {
+        Logger logger = Logger.getLogger(task3.class.getName());
+        FileHandler fh;
+        logger.setUseParentHandlers(false);
+        try {
+            fh = new FileHandler("/Users/Final/IdeaProjects/task3/log.csv");
+            logger.addHandler(fh);
+            SimpleFormatter formatter = new SimpleFormatter();
+            fh.setFormatter(formatter); //FileHandler отказался настраиваться, сохраняются логи только с последнего запуска программы
+        }
+        catch (SecurityException | IOException e) {
             e.printStackTrace();
         }
-
-
         int barrelSize = 200;
         int currentAmount = 32;
         System.out.println("Зачерпнуть(1) воды или добавить(2)?");
@@ -29,10 +25,13 @@ public class task3 {
             int scoop = scan.nextInt();
             if ((currentAmount - scoop) < 0) {
                 System.out.println("Недостаточно воды в бочке. Неудача.");
+                logger.info("Wanna scoop up " + scoop + ". (Fail)");
             }
             else {
                 System.out.println("Из бочки взято " + scoop + " литров воды. Успех.");
+                logger.info("Wanna scoop up " + scoop + ". (Success)");
                 currentAmount -= scoop;
+                logger.info("Barrel currently holds " + currentAmount);
             }
         }
         else {
@@ -41,14 +40,18 @@ public class task3 {
                 int fill = scan.nextInt();
                 if ((currentAmount + fill) > barrelSize) {
                     System.out.println("Вода не поместится в бочке. Неудача.");
+                    logger.info("Wanna fill up " + fill + ". (Fail)");
                 }
                 else {
                     System.out.println("В бочку добавлено " + fill + " литров воды. Успех.");
+                    logger.info("Wanna fill up " + fill + ". (Success)");
                     currentAmount += fill;
+                    logger.info("Barrel currently holds " + currentAmount);
                 }
             }
             else {
                 System.out.println("Взят неправильный параметр");
+                logger.info("Parameters to run the program are wrong");
             }
         }
     }

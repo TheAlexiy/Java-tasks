@@ -14,7 +14,7 @@ public class task2 {
                 System.out.println("Радиус окружности: " + coord[6]);
                 System.out.println("Координаты начала отрезка: {" + coord[9] + "," + coord[10] + "," + coord[11] + "}");
                 System.out.println("Координаты конца отрезка: {" + coord[14] + "," + coord[15] + "," + coord[16] + "}");
-                double x1 = Double.parseDouble(coord[9]);
+                double x1 = Double.parseDouble(coord[9]); //Перевод из строкового типа в дробный + rename переменных для облегчения расчета
                 double y1 = Double.parseDouble(coord[10]);
                 double z1 = Double.parseDouble(coord[11]);
                 double x2 = Double.parseDouble(coord[14]);
