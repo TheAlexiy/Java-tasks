@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Comparison {
+public class task4 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         System.out.println("Введите первую строку");
