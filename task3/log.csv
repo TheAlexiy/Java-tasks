@@ -1,4 +1,9 @@
-июн. 28, 2021 12:20:06 AM task3 main
-INFO: Wanna fill up 100. (Success)
-июн. 28, 2021 12:20:07 AM task3 main
-INFO: Barrel currently holds 132
+META DATA:
+200 (объем бочки)
+32 (текущий объем воды в бочке)
+2020-01-01Т12:51:32.124Z – [username1] - wanna top up 10, (успех).
+2020-01-01Т12:51:34.769Z – [username2] - wanna scoop 50, (фейл).
+2020-01-01Т14:12:15.456Z – [username1] - wanna top up 75, (успех).
+2020-01-01Т14:16:02.221Z – [username1] - wanna top up 34, (успех).
+2020-01-01Т14:17:59.700Z – [username1] - wanna scoop 190, (фейл).
+2020-01-01Т20:40:00.513Z – [username2] - wanna top up 70, (фейл).
